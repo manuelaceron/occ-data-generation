@@ -8,10 +8,10 @@ Our dataset generation process begins with defining common fac¸ade obstructions
 *Synthetic dataset generation process.*
 
 We include tree, bush, branch, pedestrian, street light, car, truck, overhead line, flag, street sign and pole as synthetic occlusions in our dataset.
-![Alt text](images/sim-dataset.png)
+![](images/occluders-2.png)
 *Examples of occluding objects.*
 
-![Alt text](images/occ-level-sample.pdf)
+![](images/occ-info.png)
 *Samples of fac¸ade-occ dataset with different occlusion rate.*
 
 ## Run Synthetic dataset generation process:
