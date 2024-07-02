@@ -1,8 +1,8 @@
 # Simulated occlusion generation
 
-To overcome the lack of fully annotated fac¸ade occlusion dataset, we develop a workflow to generate a simulated dataset by overlaying synthetic occlusions onto existing fac¸ade benchmarks which originally lacks such occlusions. The objective is to render images that realistically simulate occlusions of various types and sizes. These simulated images can be used to train models that effectively handle real-world occlusions in downstream applications. To create this comprehensive occluded dataset, we deploy the existing benchmarks that are commonly used in fac¸ade parsing tasks: ECP, CMP, Graz-50 and our in-house annotated KIT dataset. Thus, the newly established dataset, named facade-occ, consists of 1090 images.
+To overcome the lack of fully annotated facade occlusion dataset, we develop a workflow to generate a simulated dataset by overlaying synthetic occlusions onto existing fac¸ade benchmarks which originally lacks such occlusions. The objective is to render images that realistically simulate occlusions of various types and sizes. These simulated images can be used to train models that effectively handle real-world occlusions in downstream applications. To create this comprehensive occluded dataset, we deploy the existing benchmarks that are commonly used in facade parsing tasks: ECP, CMP, Graz-50 and our in-house annotated KIT dataset. Thus, the newly established dataset, named facade-occ, consists of 1090 images.
 
-Our dataset generation process begins with defining common fac¸ade obstructions, followed by realistically incorporating synthetic occlusions into the existing benchmark.
+Our dataset generation process begins with defining common facade obstructions, followed by realistically incorporating synthetic occlusions into the existing benchmark.
 
 ![](images/sim-dataset.png)
 *Synthetic dataset generation process.*
@@ -12,7 +12,7 @@ We include tree, bush, branch, pedestrian, street light, car, truck, overhead li
 *Examples of occluding objects.*
 
 ![](images/occ-info.png)
-*Samples of fac¸ade-occ dataset with different occlusion rate.*
+*Samples of facade-occ dataset with different occlusion rate.*
 
 ## Run Synthetic dataset generation process:
 
@@ -25,8 +25,6 @@ We include tree, bush, branch, pedestrian, street light, car, truck, overhead li
 2. run create-simulated-dataset.py with parameter -m and -r:
    - -m: split dataset to occlude, eg. train, val, test
    - -r: occlusion ratio, % of samples in the dataset to occlude
-
-     eg. 
-```bash
-  python create-simulated-dataset.py -m train -r 0.6
-```
+   ```bash
+     python create-simulated-dataset.py -m train -r 0.6
+   ```
