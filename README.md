@@ -6,6 +6,8 @@ Our dataset generation process begins with defining common fac¸ade obstructions
 
 ![Alt text](images/sim-dataset.png)
 
+![Alt text](images/occ-level-sample.pdf)
+
 
 
 To occlude a dataset:
