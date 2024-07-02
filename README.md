@@ -4,6 +4,10 @@ To overcome the lack of fully annotated fac¸ade occlusion dataset, we develop a
 
 Our dataset generation process begins with defining common fac¸ade obstructions, followed by realistically incorporating synthetic occlusions into the existing benchmark.
 
+![Alt text](images/sim-dataset.png)
+
+
+
 To occlude a dataset:
 
 1. Specify important paths:
