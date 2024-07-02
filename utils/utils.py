@@ -3,29 +3,21 @@ import os
 
 import cv2
 
-
-
-
-
 def get_srcNmask(image_file,img_path,mask_path):
     """
     Get the face image and mask
     """
     img_name=image_file.split(".")[0]
-    src_img= cv2.imread(os.path.abspath(os.path.join(img_path,image_file)),-1)
-    
-    #src_img = cv2.cvtColor(src_img, cv2.COLOR_BGR2RGB)
-
-    src_mask= cv2.imread(os.path.join(mask_path, f"{img_name}.png"))
-    
-    #src_mask=cv2.resize(src_mask,(1024,1024),interpolation= cv2.INTER_LANCZOS4)
+    src_img= cv2.imread(os.path.abspath(os.path.join(img_path,image_file)),-1)    
+    src_mask= cv2.imread(os.path.join(mask_path, f"{img_name}.png"))        
     src_mask=cv2.cvtColor(src_mask,cv2.COLOR_RGB2GRAY)
-
+    #src_mask=cv2.resize(src_mask,(512,512),interpolation= cv2.INTER_LANCZOS4)
+    #src_img=cv2.resize(src_img,(512,512),interpolation= cv2.INTER_LANCZOS4)
     return src_img, src_mask
 
 def get_occluderNmask(occluder_file,img_path,mask_path):
     occluder_name=occluder_file.split(".")[0]
-    ori_occluder_img= cv2.imread(os.path.abspath(os.path.join(img_path,occluder_file)),-1)#cv2.IMREAD_UNCHANGED)#
+    ori_occluder_img= cv2.imread(os.path.abspath(os.path.join(img_path,occluder_file)),-1)
     
     if ori_occluder_img.shape[2] < 4:
         print('no alpha channel', occluder_name)
@@ -37,13 +29,11 @@ def get_occluderNmask(occluder_file,img_path,mask_path):
     
     h, w, d = ori_occluder_img.shape
     
-    #Make img ans mask same size: mask is smaller
-    ori_occluder_img = cv2.resize(ori_occluder_img,(occluder_mask.shape[1],occluder_mask.shape[0]),interpolation= cv2.INTER_LANCZOS4) 
-    #print(ori_occluder_img.shape, occluder_mask.shape)
+    # Make img ans mask same size: mask is smaller
+    ori_occluder_img = cv2.resize(ori_occluder_img,(occluder_mask.shape[1],occluder_mask.shape[0]),interpolation= cv2.INTER_LANCZOS4)    
     
     
-    #cropped out the hand img
-    
+    # Cropped out the hand img    
     try:
         occluder_img=cv2.bitwise_and(ori_occluder_img,ori_occluder_img,mask=occluder_mask)
     except Exception as e:

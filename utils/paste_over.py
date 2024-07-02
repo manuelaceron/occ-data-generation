@@ -42,7 +42,7 @@ def paste_over(im_src,occluder_mask, im_dst,dst_mask, center,occlusion_mask,rand
    
 
     #alpha blending edge processing
-    kernel = np.ones((3,3),np.uint8) #was3
+    kernel = np.ones((3,3),np.uint8) 
     
     no_ero ={"tree", "treet", "fenc"}
     if oc_type in no_ero:
