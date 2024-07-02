@@ -1,6 +1,6 @@
 # Simulated occlusion generation
 
-To overcome the lack of fully annotated facade occlusion dataset, we develop a workflow to generate a simulated dataset by overlaying synthetic occlusions onto existing facade benchmarks which originally lacks such occlusions. The objective is to render images that realistically simulate occlusions of various types and sizes. These simulated images can be used to train models that effectively handle real-world occlusions in downstream applications. To create this comprehensive occluded dataset, we deploy the existing benchmarks that are commonly used in facade parsing tasks: ECP, CMP, Graz-50 and our in-house annotated KIT dataset. Thus, the newly established dataset, named facade-occ, consists of 1090 images.
+To overcome the lack of fully annotated facade occlusion dataset, we develop a workflow to generate a simulated dataset by overlaying synthetic occlusions onto existing facade benchmarks which originally lacks such occlusions. The objective is to render images that realistically simulate occlusions of various types and sizes. These simulated images can be used to train models that effectively handle real-world occlusions in downstream applications. To create this comprehensive occluded dataset, we deploy the existing benchmarks that are commonly used in facade parsing tasks: [ECP](https://ieeexplore.ieee.org/document/5540068), [CMP](https://cmp.felk.cvut.cz/~tylecr1/facade/), [Graz-50](https://ieeexplore.ieee.org/document/6247857) and our in-house annotated KIT dataset. Thus, the newly established dataset, named *facade-occ*, consists of 1090 images.
 
 Building upon the previous work of [Voo et al](https://arxiv.org/pdf/2205.06218), our dataset generation process begins with defining common facade obstructions, followed by realistically incorporating synthetic occlusions into the existing benchmark.
 
@@ -16,7 +16,7 @@ We include tree, bush, branch, pedestrian, street light, car, truck, overhead li
 
 ## Run Synthetic dataset generation process:
 
-1. Specify important paths:
+1. Set important paths:
    - oc_img_path: path of the occluders RGB images
    - oc_mask_path: path of the occluders binary mask
    - base_in_dir: path of dataset to occlude
